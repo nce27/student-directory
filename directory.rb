@@ -1,3 +1,4 @@
+# outputs the list of students
 puts "THE STUDENTS OF VILLAINS ACADEMY"
 puts "--------------------------------"
 puts "Dr. Hannibal Lecter"
@@ -11,6 +12,7 @@ puts "Freddy Krueger"
 puts "The Joker"
 puts "Jeoffrey Baratheon"
 puts "Norman Bates"
+# prints total number of students
 print "Overall, we have "
 print 11
 puts " great students"
