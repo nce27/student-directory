@@ -17,12 +17,19 @@ def print_header
   puts "THE STUDENTS OF VILLAINS ACADEMY"
   puts "--------------------------------"
 end
-def print_names(names)
+
+def print(names) #name parameter passed
+  # this def has no access to the local variable defined outside of it
 # prints the names of each student
-  students.each do |name| # replaces `puts students[0] .. puts students[10]`
-  puts name
+  names.each do |name|
+    puts name
+  end
 end
+
 def print_footer(names)
 # prints the footer, the total number of students
-  print "Overall, we have #{names.count} great students"
+  puts "Overall, we have #{names.count} great students"
 end
+print_header
+print(students)
+print_footer(students)
