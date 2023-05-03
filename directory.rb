@@ -1,19 +1,25 @@
 # creates an hash of the students
 # specifies their name and the cohort they belong to
 # cohort month stored as a symbol
-students = [
-  {name: "Dr. Hannibal Lecter", cohort: :november},
-  {name: "Darth Vader", cohort: :november},
-  {name: "Nurse Ratched", cohort: :november},
-  {name: "Michael Corleone", cohort: :november},
-  {name: "Alex DeLarge", cohort: :november},
-  {name: "The Wicked Witch of the West", cohort: :november},
-  {name: "Terminator", cohort: :november},
-  {name: "Freddy Krueger", cohort: :november},
-  {name: "The Joker", cohort: :november},
-  {name: "Jeoffrey Baratheon", cohort: :november},
-  {name: "Norman Bates", cohort: :november}
-]
+
+def input_students
+  puts "Please enter the names of the students"
+  puts "To finish, just hit return twice"
+  
+  students = [] #empty array created
+
+  name = gets.chomp
+
+  while !name.empty? do
+    # while the name isn't empty add the student hash to the array
+    students << {name: name, cohort: :november}
+    puts "Now we have #{students.count} students"
+    name = gets.chomp
+  end
+  students
+end
+
+
 def print_header
 # prints the header
   puts "THE STUDENTS OF VILLAINS ACADEMY"
@@ -33,6 +39,21 @@ def print_footer(students)
 # prints the footer, the total number of students
   puts "Overall, we have #{students.count} great students"
 end
+students = input_students
 print_header
 print(students)
 print_footer(students)
+
+[
+  {name: "Dr. Hannibal Lecter", cohort: :november},
+  {name: "Darth Vader", cohort: :november},
+  {name: "Nurse Ratched", cohort: :november},
+  {name: "Michael Corleone", cohort: :november},
+  {name: "Alex DeLarge", cohort: :november},
+  {name: "The Wicked Witch of the West", cohort: :november},
+  {name: "Terminator", cohort: :november},
+  {name: "Freddy Krueger", cohort: :november},
+  {name: "The Joker", cohort: :november},
+  {name: "Jeoffrey Baratheon", cohort: :november},
+  {name: "Norman Bates", cohort: :november}
+]
