@@ -30,9 +30,21 @@ def print(students) # parameter passed because ...
 # prints the names of each student
 
   ## challenge 1. prints each student with a number before the name of each student
+  #students.each_with_index do |student, index|
+    #puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)" 
+
   students.each_with_index do |student, index|
     puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)" 
     #references the data in the students hash using its keys (name:) & (cohort:)
+  end
+end
+
+def print_filtered(students, letter)
+  ## challenge 2. prints each student that begins with the name the user has specified
+  students.each_with_index do |student, index|
+    if student[:name][0].downcase == letter.downcase
+      puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
+    end
   end
 end
 
@@ -45,6 +57,10 @@ students = input_students
 print_header
 print(students)
 print_footer(students)
+
+puts "Please enter a letter to filter by:"
+letter = gets.chomp
+print_filtered(students, letter)
 
 =begin
 [
