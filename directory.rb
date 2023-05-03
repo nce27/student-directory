@@ -1,16 +1,18 @@
-# creates an array of the students
+# creates an hash of the students
+# specifies their name and the cohort they belong to
+# cohort month stored as a symbol
 students = [
-  "Dr. Hannibal Lecter",
-  "Darth Vader",
-  "Nurse Ratched",
-  "Michael Corleone",
-  "Alex DeLarge",
-  "The Wicked Witch of the West",
-  "Terminator",
-  "Freddy Krueger",
-  "The Joker",
-  "Jeoffrey Baratheon",
-  "Norman Bates"
+  {name: "Dr. Hannibal Lecter", cohort: :november},
+  {name: "Darth Vader", cohort: :november},
+  {name: "Nurse Ratched", cohort: :november},
+  {name: "Michael Corleone", cohort: :november},
+  {name: "Alex DeLarge", cohort: :november},
+  {name: "The Wicked Witch of the West", cohort: :november},
+  {name: "Terminator", cohort: :november},
+  {name: "Freddy Krueger", cohort: :november},
+  {name: "The Joker", cohort: :november},
+  {name: "Jeoffrey Baratheon", cohort: :november},
+  {name: "Norman Bates", cohort: :november}
 ]
 def print_header
 # prints the header
@@ -18,17 +20,18 @@ def print_header
   puts "--------------------------------"
 end
 
-def print(names) #name parameter passed
+def print(students) # parameter passed because ...
   # this def has no access to the local variable defined outside of it
 # prints the names of each student
-  names.each do |name|
-    puts name
+  students.each do |student|
+    puts "#{student[:name]} (#{student[:cohort]} cohort)" 
+    #references the data in the students hash using its keys (name:) & (cohort:)
   end
 end
 
-def print_footer(names)
+def print_footer(students)
 # prints the footer, the total number of students
-  puts "Overall, we have #{names.count} great students"
+  puts "Overall, we have #{students.count} great students"
 end
 print_header
 print(students)
