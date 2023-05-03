@@ -39,6 +39,7 @@ def print(students) # parameter passed because ...
   end
 end
 
+=begin
 def print_filtered(students, letter)
   ## challenge 2. prints each student that begins with the name the user has specified
   students.each_with_index do |student, index|
@@ -46,6 +47,25 @@ def print_filtered(students, letter)
       puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
     end
   end
+end
+
+puts "Please enter a letter to filter by:"
+letter = gets.chomp
+print_filtered(students, letter)
+
+=end
+
+def print_short_names(students)
+  ## challenge 3. Modify your program to only print the students whose name is shorter than 12 characters
+  students.each_with_index do |student, index|
+    if student[:name].length < 12
+      puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
+    end
+  end
+end
+
+def print_footertwo(students)
+  puts "Here is a list of students who have less than 12 characters in their name."
 end
 
 def print_footer(students)
@@ -57,10 +77,8 @@ students = input_students
 print_header
 print(students)
 print_footer(students)
-
-puts "Please enter a letter to filter by:"
-letter = gets.chomp
-print_filtered(students, letter)
+print_short_names(students)
+print_footertwo(students)
 
 =begin
 [
