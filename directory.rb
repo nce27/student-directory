@@ -15,17 +15,8 @@ students = [
 # prints the students
 puts "THE STUDENTS OF VILLAINS ACADEMY"
 puts "--------------------------------"
-puts students[0]
-puts students[1]
-puts students[2]
-puts students[3]
-puts students[4]
-puts students[5]
-puts students[6]
-puts students[7]
-puts students[8]
-puts students[9]
-puts students[10]
-
+students.each do |student| # replaces `puts students[0] .. puts students[10]`
+  puts student
+end
 # prints total number of students
 print "Overall, we have #{students.count} great students"
