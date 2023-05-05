@@ -27,21 +27,24 @@ end
 
 def print(students) # parameter passed because ...
   # this def has no access to the local variable defined outside of it
-# prints the names of each student
-
+  # prints the names of each student
+  
+=begin
   ## challenge 1. prints each student with a number before the name of each student
-  #students.each_with_index do |student, index|
-    #puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)" 
-
   students.each_with_index do |student, index|
     puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)" 
     #references the data in the students hash using its keys (name:) & (cohort:)
   end
+=end
+  while index < students.length
+    puts "#{student[:name]} (#{student[:cohort]} cohort)"
 end
 
 =begin
 def print_filtered(students, letter)
+
   ## challenge 2. prints each student that begins with the name the user has specified
+
   students.each_with_index do |student, index|
     if student[:name][0].downcase == letter.downcase
       puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
