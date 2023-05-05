@@ -82,10 +82,10 @@ def save_students
   file.close
 end
 
-def load_students
-  file = File.open("students.csv", "r") # 'r'eading the lines into an array
+def load_students(filename = "students.csv")
+  file = File.open(filename, "r") # 'r'eading the lines into an array
   file.readlines.each do |line| # iterates for each student
-  name,cohort = line.chomp.split(",") # parallel assignment, split with commas
+    name,cohort = line.chomp.split(",") # parallel assignment, split with commas
     @students << {name: name, cohort: cohort.to_sym} # creates a new hash 
     # with cohort converted from a string and stored as a symbol
   end
