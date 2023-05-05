@@ -1,6 +1,4 @@
-# creates an hash of the students
-# specifies their name and the cohort they belong to
-# cohort month stored as a symbol
+# COPY TO COMPLETE ADDITIONAL CHALLENGES ON
 
 def input_students
   puts "Please enter the names of the students"
@@ -28,16 +26,20 @@ end
 def print(students) # parameter passed because ...
   # this def has no access to the local variable defined outside of it
   # prints the names of each student
-  
+
 =begin
   ## challenge 1. prints each student with a number before the name of each student
+
   students.each_with_index do |student, index|
     puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)" 
     #references the data in the students hash using its keys (name:) & (cohort:)
   end
 =end
+  index = 0
   while index < students.length
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
+    puts "#{students[:name]} (#{students[:cohort]} cohort)"
+  end
+  index +=1
 end
 
 =begin
@@ -58,13 +60,23 @@ print_filtered(students, letter)
 
 =end
 
+
 def print_short_names(students)
   ## challenge 3. Modify your program to only print the students whose name is shorter than 12 characters
+index = 0
+  while index < students.length
+    if student[:name].length < 12
+      puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
+    end
+  end
+  index +=1
+=begin
   students.each_with_index do |student, index|
     if student[:name].length < 12
       puts "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)"
     end
   end
+=end
 end
 
 def print_footertwo(students)
@@ -82,6 +94,8 @@ print(students)
 print_footer(students)
 print_short_names(students)
 print_footertwo(students)
+
+
 
 =begin
 [
